@@ -41,8 +41,8 @@ public class TradeStoreService {
         return tradeStoreRepository.getAllTrades();
     }
 
-    //@Scheduled(cron = "0 30 0 * * ?")
-    @Scheduled(cron = "*/5 * * * *")
+    @Scheduled(cron = "0 10 0 * * ?")
+    //@Scheduled(cron = "0 */5 * * * *")
     private void updateExpireFlag() {
         try {
             tradeStoreRepository.updateExpireFlag();

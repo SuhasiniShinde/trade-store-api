@@ -26,7 +26,7 @@ public class TradeStoreRequest {
     private String bookId;
 
     /*@NotNull(message = "MaturityDate should not be blank")*/
-    //@ValidMaturityDate
+    @ValidMaturityDate
     private Date maturityDate;
 
     public String getTradeId() {

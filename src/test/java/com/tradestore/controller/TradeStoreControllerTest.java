@@ -1,18 +1,25 @@
 package com.tradestore.controller;
 
-import com.tradestore.model.TradeStoreException;
-import com.tradestore.model.dto.TradeStoreRequest;
-import com.tradestore.model.dto.TradeStoreResponse;
-import com.tradestore.service.TradeStoreService;
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.Assert.assertNotNull;
+import com.tradestore.model.TradeStoreException;
+import com.tradestore.model.dto.TradeStoreRequest;
+import com.tradestore.model.dto.TradeStoreResponse;
+import com.tradestore.service.TradeStoreService;
 
+@ExtendWith(MockitoExtension.class)
+@RunWith(JUnitPlatform.class)
 public class TradeStoreControllerTest {
 
     @InjectMocks

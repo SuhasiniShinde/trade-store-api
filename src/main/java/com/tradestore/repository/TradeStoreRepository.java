@@ -65,8 +65,8 @@ public class TradeStoreRepository {
         if (tradeStoreHashMap != null) {
             for (Map.Entry<TradeStoreKey, HashMap<Integer, TradeStore>> tradeStoreHashMap : tradeStoreHashMap.entrySet()) {
                 for (Map.Entry<Integer, TradeStore> tradeStoreEntry : tradeStoreHashMap.getValue().entrySet()) {
-                    if(tradeStoreEntry.getValue() != null && tradeStoreEntry.getValue().getMaturityDate() != null) {
-                        if (tradeStoreEntry.getValue().getMaturityDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate().isAfter(LocalDate.now())) {
+                	if(tradeStoreEntry.getValue() != null && !tradeStoreEntry.getValue().getExpired() && tradeStoreEntry.getValue().getMaturityDate() != null) {
+                		if (tradeStoreEntry.getValue().getMaturityDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate().isBefore(LocalDate.now())) {
                             tradeStoreEntry.getValue().setExpired(true);
                         }
                     }
